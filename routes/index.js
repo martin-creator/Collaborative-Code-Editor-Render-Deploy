@@ -69,35 +69,21 @@ body('message').not().isEmpty().withMessage("Empty message")], function (req, re
     res.render("thank", { title: "Collaborative Code Editor - write some come with family!" })
 
   }
-
-
-
-
-
-
-  /*check(req.bodyname).not().isEmpty().withMessage("Empty name");
-  check(req.body.email).not().isEmpty().withMessage("Empty email");
-  check(req.body.message).not().isEmpty().withMessage("Empty message");
- 
-  var errors = validationResult(req);
- 
-
-
-  if (errors) {
-    console.log(errors);
-    res.render("contact", {
-      title: "Collaborative Code Editor - write some come with family!",
-      name: req.check.name,
-      email: req.check.email,
-      message: req.check.message,
-      errorMessages: errors,
-    });
-  } else {
-    res.render("thank", {
-      title: "Collaborative Code Editor - write some come with family!",
-    });
-  }*/
 }
 );
+
+/*  GET login page. */
+router.get('/login', function(req,res,next){
+  res.render('login', {title: 'Login your account'});
+
+});
+
+
+/* GET login page. */
+router.get('/register', function(req, res, next){
+  res.render('register', {title: 'Register a new account'});
+});
+
+
 
 module.exports = router;
