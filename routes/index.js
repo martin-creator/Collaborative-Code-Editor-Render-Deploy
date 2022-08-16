@@ -2,6 +2,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var router = express.Router();
 const { check, body, validationResult } = require("express-validator");
+const nodemailer = require("nodemailer");
+var config =  require('../config')
+let transporter = nodemailer.createTransport(config.mailer)
+
 
 
 /* GET home page. */
@@ -44,6 +48,24 @@ body('message').not().isEmpty().withMessage("Empty message")], function (req, re
       errorMessages: errors.array()
     });
   } else {
+
+    var mailOptions = {
+      from: 'africaneaglecode<no-reply@gmail.com>',
+      to: 'martinlubowa@outlook.com',
+      subject: 'You got a new message from visitor😁',
+      text: req.body.message
+
+
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+        return console.log(error);
+      }
+
+      res.render("thank", { title: "Collaborative Code Editor - write some come with family!" })
+
+    })
     res.render("thank", { title: "Collaborative Code Editor - write some come with family!" })
 
   }
