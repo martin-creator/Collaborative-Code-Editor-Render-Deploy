@@ -7,10 +7,17 @@ const { body , validationResult} = require('express-validator');
 const bodyParser = require('body-parser');
 
 
+var mongoose = require('mongoose');
+var config = require('./config');
+
 
 
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
+
+mongoose.connect('mongodb://localhost:27017/codeshare', {useNewUrlParser: true, useUnifiedTopology: true});
+global.User = require('./models/user');
+
 
 var app = express();
 
