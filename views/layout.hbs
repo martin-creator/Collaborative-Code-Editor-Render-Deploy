@@ -30,7 +30,16 @@
           <a class="nav-link">Pricing</a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right left">
+        {{#if user}}
+        <li><a href="#">{{user.name}}</a></li>
+        {{else}}
+        <li><a class="nav-link" href="/login">Login</a></li>
+        <li><a class="nav-link" href="/register">Register</a></li>
+        {{/if}}
+      </ul>
     </div>
+    
   </div>
 </nav>
     {{{body}}}

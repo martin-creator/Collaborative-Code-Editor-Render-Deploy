@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { body, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
+//const user = require("../models/user");
 
 
 var mongoose = require('mongoose');
@@ -32,9 +33,16 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.text());
+
+
 app.use(session({
   secret: 'codeAfrica',
   resave: false,
@@ -43,13 +51,19 @@ app.use(session({
 
 }));
 
+
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next){
+  if(req.isAuthenticated()){
+    res.locals.user = 'Martin'
+  };
+  next();
+})
 
 
 app.use('/', indexRouter);

@@ -3,13 +3,21 @@ var bodyParser = require("body-parser");
 var router = express.Router();
 const { check, body, validationResult } = require("express-validator");
 var passport = require('passport');
-const user = require("../models/user");
+
 
 
 /*  GET login page. */
 router.get('/login', function (req, res, next) {
     res.render('login', { title: 'Login your account' });
 
+});
+
+/*  POST login page. */
+router.post('/login', passport.authenticate('local', {successRedirect:'/',  failureRedirect: '/login'}
+), function (req, res, next) {
+    //console(req.session.messages)
+    //console.log("Hello Martin, you are great!")
+    //res.redirect('/');
 });
 
 
@@ -24,7 +32,7 @@ router.post('/register', [
     body('name').not().isEmpty().withMessage("Empty name"),
     body('email').not().isEmpty().withMessage("Empty email"),
     body('password').not().isEmpty().withMessage("Empty password"),
-    body('confirmPassword').custom((value, {req}) => value === req.body.password).not().isEmpty().withMessage("Passwords don't match")],
+    body('confirmPassword').custom((value, { req }) => value === req.body.password).not().isEmpty().withMessage("Passwords don't match")],
     function (req, res, next) {
         // newpassword = req.body.password
         //console.log(req.body);

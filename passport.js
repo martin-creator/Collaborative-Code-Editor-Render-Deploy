@@ -9,17 +9,19 @@ passport.serializeUser(function(user,done ){
 
 
 passport.deserializeUser(function(id, done){
-    user.findOne({_id: id}, function(err, user){
+    User.findOne({_id: id}, function(err, user){
         done(err, user);
     })
 });
 
 
 passport.use(new LocalStrategy({
-    usernameField: 'email'
+    usernameField: 'email',
+    passwordField: 'password',
+    //passReqToCallback : true
 }, 
 function(username, password, done){
-    user.findOne({email:username}, function(err, done){
+    User.findOne({email:username}, function(err, user){
         if (err) return done(err);
         if(!user){
             return done(null, false, {
