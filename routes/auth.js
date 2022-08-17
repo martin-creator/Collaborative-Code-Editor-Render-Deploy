@@ -68,7 +68,14 @@ router.post('/register', [
 
         }
 
-    })
+    });
+
+
+/* GET logout page. */
+router.get('/logout', function (req, res) {
+    req.logOut();
+    res.redirect('/');
+})
 
 
 module.exports = router;
