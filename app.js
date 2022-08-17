@@ -47,8 +47,7 @@ app.use(session({
   secret: 'codeAfrica',
   resave: false,
   saveUninitialized: true,
-  cookie: {secure: true}
-
+  cookie: {secure: false}
 }));
 
 
@@ -60,7 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next){
   if(req.isAuthenticated()){
-    res.locals.user = 'Martin'
+    res.locals.user = req.user
   };
   next();
 })

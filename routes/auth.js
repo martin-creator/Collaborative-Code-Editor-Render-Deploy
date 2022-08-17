@@ -72,10 +72,12 @@ router.post('/register', [
 
 
 /* GET logout page. */
-router.get('/logout', function (req, res) {
-    req.logOut();
-    res.redirect('/');
-})
+router.get('/logout', function(req, res, next) {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/');
+    });
+  });
 
 
 module.exports = router;

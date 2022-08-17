@@ -11,7 +11,8 @@ let transporter = nodemailer.createTransport(config.mailer)
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  console.log(res.locals.user);
+  res.locals.passt = 'Gourav'
+  console.log(res.locals);
   res.render("index", {
     title: "Collaborative Code Editor - write some come with family!",
   });
