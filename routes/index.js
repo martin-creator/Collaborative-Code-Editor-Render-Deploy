@@ -72,18 +72,6 @@ body('message').not().isEmpty().withMessage("Empty message")], function (req, re
 }
 );
 
-/*  GET login page. */
-router.get('/login', function(req,res,next){
-  res.render('login', {title: 'Login your account'});
-
-});
-
-
-/* GET login page. */
-router.get('/register', function(req, res, next){
-  res.render('register', {title: 'Register a new account'});
-});
-
 
 
 module.exports = router;
