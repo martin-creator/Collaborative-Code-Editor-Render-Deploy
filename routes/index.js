@@ -11,8 +11,8 @@ let transporter = nodemailer.createTransport(config.mailer)
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.locals.passt = 'Gourav'
-  console.log(res.locals);
+  //res.locals.passt = 'Gourav'
+ // console.log(res.locals);
   res.render("index", {
     title: "Collaborative Code Editor - write some come with family!",
   });
@@ -35,18 +35,19 @@ router.get("/contact", function (req, res, next) {
 /* POST contact page. */
 router.post("/contact", [body('name').not().isEmpty().withMessage("Empty name"),
 body('email').not().isEmpty().withMessage("Empty email"),
-body('message').not().isEmpty().withMessage("Empty message")], function (req, res, next) {
+body('message').not().isEmpty().withMessage("Empty message")], 
+function (req, res, next) {
 
-  console.log(req.body.name);
-  console.log(req.body.email);
-  console.log(req.body.message);
+  //console.log(req.body.name);
+  //console.log(req.body.email);
+ // console.log(req.body.message);
 
   const errors = validationResult(req)
 
   if (!errors.isEmpty()) {
-     console.log({errors : errors.array()});
-     console.log("Hi Martin We got some errors");
-    res.render("contact", {
+     //console.log({errors : errors.array()});
+     //console.log("Hi Martin We got some errors");
+   return  res.render("contact", {
       title: "Collaborative Code Editor - write some come with family!",
       errorMessages: errors.array()
     });

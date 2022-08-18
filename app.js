@@ -11,10 +11,10 @@ const bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
+var cors = require('cors');
 
 require('./passport')
 var config = require('./config');
-
 
 
 var indexRouter = require('./routes/index');
@@ -34,6 +34,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
+
+/* Allow CORS */
+app.use(cors({
+  origin: '*'
+}));
+
 
 
 app.use(express.json());
@@ -65,6 +71,8 @@ app.use(function(req, res, next){
   };
   next();
 })
+
+app.use(cors());
 
 
 app.use('/', indexRouter);

@@ -45,8 +45,8 @@ router.post('/register', [
 
         if (!errors.isEmpty()) {
             console.log({ errors: errors.array() });
-            console.log("Hi Martin We got some errors");
-            res.render('register', {
+            //console.log("Hi Martin We got some errors");
+            return res.render('register', {
                 name: req.body.name,
                 email: req.body.email,
                 errorMessages: errors.array()
@@ -58,11 +58,11 @@ router.post('/register', [
             user.setPassword(req.body.password);
             user.save(function (err) {
                 if (err) {
-                    res.render('register', {
+                    return res.render('register', {
                         errorMessages: err
                     })
                 } else {
-                    res.redirect('/login');
+                   return res.redirect('/login');
                 }
             })
 
@@ -75,7 +75,7 @@ router.post('/register', [
 router.get('/logout', function (req, res, next) {
     req.logout(function (err) {
         if (err) { return next(err); }
-        res.redirect('/');
+        return res.redirect('/');
     });
 });
 

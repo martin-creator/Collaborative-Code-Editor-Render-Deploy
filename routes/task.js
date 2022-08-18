@@ -9,7 +9,7 @@ router.get('/createTask', function(req, res){
     newTask.save(function(err, data){
         if(err){
             console.log(err);
-            res.render('error');
+            return res.render('error');
         }else{
             res.redirect('/task/' + data._id);
         }
@@ -24,13 +24,13 @@ router.get('/task/:id', function(req, res){
         Task.findOne({_id: req.params.id}, function(err, data){
             if(err){
                 console.log(err);
-                res.render('error');
+               return  res.render('error');
             }
 
             if(data){
-                res.render('task', {data: data});
+                return res.render('task', {data: data});
             }else {
-                res.render('error');
+                return res.render('error');
             }
             res.render('error');
         });
