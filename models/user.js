@@ -6,12 +6,12 @@ var userSchema = new mongoose.Schema({
     email : {
         type: String,
         unique: true,
-        required: false
+        required: true
     },
 
     name: {
         type: String,
-        required: false
+        required:true
     },
     hash: String,
     salt: String,

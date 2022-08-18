@@ -19,10 +19,12 @@ var config = require('./config');
 
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
+var taskRouter = require('./routes/task');
 //var usersRouter = require('./routes/users');
 
 mongoose.connect('mongodb://127.0.0.1:27017/codeshare', { useNewUrlParser: true, useUnifiedTopology: true });
 global.User = require('./models/user');
+global.Task = require('./models/task');
 
 
 var app = express();
@@ -67,6 +69,7 @@ app.use(function(req, res, next){
 
 app.use('/', indexRouter);
 app.use('/', authRouter);
+app.use('/', taskRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
