@@ -47,8 +47,9 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<input type="hidden" value="{{roomId}}" id="roomId">
 
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script
@@ -72,6 +73,9 @@
      username = "User" + userId; 
     $("#chatbox-username").text(username);
    };
+
+   var roomId = $(roomId).val();
+   socket.emit('joinRoom', {room: roomId});
 
   var userMessage = function(name, text){
      return('<li class="media"><divclass="media-body"><div class="media">'+ '<div class="media-body">' + '<b> ' +

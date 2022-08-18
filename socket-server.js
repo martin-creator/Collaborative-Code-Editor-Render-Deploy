@@ -7,9 +7,21 @@ module.exports = function(server){
         cors: {
           origin: "*",
         }});
+
     io.on('connection', function(socket){
+
+        socket.on('joinRoom', function(data){
+            socket.room = data.room;
+            socket.join(data.room)
+        })
+
         socket.on('chatMessage', function(data){
-            io.emit('chatMessage', data);
-        } )
+            io.to(socket.room).emit('chatMessage', data);
+            //io.emit('chatMessage', data);
+        } );
+
+        socket.on('disconnect', function(){
+            socket.leave(socket.room);
+        });
     })
 }
