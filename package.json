@@ -16,9 +16,11 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongoose": "^6.5.2",
+    "mongoose-findorcreate": "^3.0.0",
     "morgan": "~1.9.1",
     "nodemailer": "^6.7.8",
     "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
     "passport-local": "^1.0.0"
   }
 }

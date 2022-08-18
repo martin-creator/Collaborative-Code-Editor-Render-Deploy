@@ -13,7 +13,7 @@ router.get('/login', function (req, res, next) {
 });
 
 /*  POST login page. */
-router.post('/login', passport.authenticate('local', {successRedirect:'/',  failureRedirect: '/login'}
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }
 ), function (req, res, next) {
     //console(req.session.messages)
     //console.log("Hello Martin, you are great!")
@@ -72,12 +72,24 @@ router.post('/register', [
 
 
 /* GET logout page. */
-router.get('/logout', function(req, res, next) {
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
+router.get('/logout', function (req, res, next) {
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
     });
-  });
+});
+
+/* GET auth for github */
+router.get('/auth/github',
+    passport.authenticate('github', { scope: ['user:email'] }));
+
+/*GET auth for github callback */
+router.get('/auth/github/callback',
+    passport.authenticate('github', { failureRedirect: '/login' }),
+    function (req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    });
 
 
 module.exports = router;

@@ -1,20 +1,24 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
+var findOrCreate = require('mongoose-findorcreate')
 
 var userSchema = new mongoose.Schema({
     email : {
         type: String,
         unique: true,
-        required: true
+        required: false
     },
 
     name: {
         type: String,
-        required: true
+        required: false
     },
     hash: String,
-    salt: String
+    salt: String,
+    githubId: String
 });
+
+userSchema.plugin(findOrCreate)
 
 /* Creates new password on user sign up */
 userSchema.methods.setPassword = function(password){
