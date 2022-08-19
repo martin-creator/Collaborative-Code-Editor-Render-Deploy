@@ -5,6 +5,7 @@ var ot = require('ot');
 //var codemirror = require('codemirror');
 var roomList = {};
 var cors = require('cors');
+const task = require('./models/task');
 
 
 
@@ -25,7 +26,12 @@ module.exports = function(server){
                 console.log("I am here martin")
                 console.log(data.room)
                 var socketIOServer =  new ot.EditorSocketIOServer(str, [], data.room, function(socket, cb){
-                    cb(true);
+                    //cb(true);
+                    var self = this;
+                    Task.findByIdAndUpdate(data.room, {content: self.document}, function(err){
+                        if (err) return cb(false);
+                        cb(true);
+                    } ) // This saves the code from the latest user section
                 });
                 roomList[data.room] = socketIOServer; 
             };
