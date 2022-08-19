@@ -22,7 +22,21 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-require('../socket-server')(server);
+require('../socket-server')(server, {
+  cors: true,
+  origins: ["*"],
+  methods: ["GET", "POST"],
+  handlePreflightRequest: (req, res) => {
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "https://example.com",
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "my-custom-header",
+      "Access-Control-Allow-Credentials": true
+    });
+    res.end();
+  },
+  
+});
 
 /**
  * Listen on provided port, on all network interfaces.
