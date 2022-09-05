@@ -9,7 +9,7 @@ This collaborative code editor provides individuals and businesses with the infr
 
 > CCE aims to allow every software developer to pair-program at no cost!
 
-[How the collaborative page looks like in CCE](https://imgur.com/duJX0nw)
+![How the collaborative page looks like in CCE](https://imgur.com/duJX0nw)
 
 ## Purpose
 According to the [Stackoverflow developers’ survey of 2022](https://survey.stackoverflow.co/2022/), out of the 70,000 survey participants, only 3.3% are African, and 1.48% are Black. This statistic accurately captures the dire need to increase the developer population in Africa to support the digital transformation of our sectors so that we can provide services to the people most in need. According to the [2020 Google economy report](https://innovationvillage.co.ug/wp-content/uploads/2021/12/Final-DevScape-Report-2021-compressed-1_1.pdf), there are 11,000 developers in Uganda serving a population of 44.7 million people,  which is a low number if our tech ecosystem is to compete in Africa. 
