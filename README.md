@@ -16,11 +16,11 @@ According to the [Stackoverflow developers’ survey of 2022](https://survey.sta
 
 Many companies and organizations like [ALX Africa](https://www.alxafrica.com/), [Andela](https://andela.com/), [Tunga](https://tunga.io/) have come up with programs to train Africans in the latest development technologies to bridge this gap. One of the challenges faced during software development programs is the lack of structured mentorship. Ideally, when a student needs help to understand a particular algorithm, the only tools available are zoom or google meet, which do not support real-time code collaboration, thus making the mentor-students session less interactive. 
 
-To address, the problem of less interactive coding session betweenn mentors and students in African bootcamp training programs, I decided to build **CCE** to  enable students and mentors to: 
+To address, the problem of non-interactive coding sessions between mentors and students in African software development training programs, I decided to build **CCE** to  enable students and mentors to: 
 
-- Conduct real-time, remote **pair programming** sessions
-- Conduct real-time, remote **tutoring** sessions
-- Conduct real-time, remote **mock coding interviews**
+* conduct real-time, remote **pair programming** sessions
+* conduct real-time, remote **tutoring** sessions
+* conduct real-time, remote **mock coding interviews**
 
 
 **CCE's** video conferencing and chat features ensure that the coding sessions are interactive as possible.
