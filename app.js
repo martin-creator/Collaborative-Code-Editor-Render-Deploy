@@ -8,19 +8,21 @@ const { body, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
 //const user = require("../models/user");
 
+
 var app = express();
 
 /* Allow CORS */
-app.use(cors({origin: ['*'],
-handlePreflightRequest: (req, res) => {
-  res.writeHead(200, {
-    "Access-Control-Allow-Origin": "https://example.com",
-    "Access-Control-Allow-Methods": "GET,POST",
-    "Access-Control-Allow-Headers": "my-custom-header",
-    "Access-Control-Allow-Credentials": false
-  });
-  res.end();
-}
+app.use(cors({
+  origin: ['*'],
+  handlePreflightRequest: (req, res) => {
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "https://example.com",
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "my-custom-header",
+      "Access-Control-Allow-Credentials": false
+    });
+    res.end();
+  }
 }));
 
 var mongoose = require('mongoose');
@@ -72,7 +74,7 @@ app.use(session({
   secret: 'codeAfrica',
   resave: false,
   saveUninitialized: true,
-  cookie: {secure: false},
+  cookie: { secure: false },
 }));
 
 
@@ -82,8 +84,8 @@ app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res, next){
-  if(req.isAuthenticated()){
+app.use(function (req, res, next) {
+  if (req.isAuthenticated()) {
     res.locals.user = req.user
   };
   next();

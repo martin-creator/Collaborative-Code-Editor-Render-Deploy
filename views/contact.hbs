@@ -1,26 +1,45 @@
 <h1 class="text-center">Contact Us</h1>
 
-<form class="col-md-6 col-md-offset-3 " method="post">
-{{#each errorMessages}}
-<div class="alert alert-danger">
-    {{this.msg}}
-</div>
-{{/each}}
+<form class="col-md-6 col-md-offset-3" method="post">
+  {{#each errorMessages}}
+    <div class="alert alert-danger">
+      {{this.msg}}
+    </div>
+  {{/each}}
 
-  <div class="mb-3 ">
-    <label  class="form-label">Name</label>
-    <input type="text" class="form-control" placeholder="Name"  name="name"  value={{name}} >
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      name="name"
+      value={{name}}
+    />
+    <div id="emailHelp" class="form-text">We'll never share your email with
+      anyone else.</div>
   </div>
   <div class="mb-3">
-    <label  class="form-label">Email address</label>
-    <input type="email" class="form-control" placeholder="Email"  name="email" value={{name}} >
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Email"
+      name="email"
+      value={{name}}
+    />
+    <div id="emailHelp" class="form-text">We'll never share your email with
+      anyone else.</div>
   </div>
   <div class="mb-3">
-    <label  class="form-label">Message</label>
-    <textarea class="form-control"  name="message" placeholder="Leave a comment here" style="height: 100px">{{message}}</textarea>
+    <label class="form-label">Message</label>
+    <textarea
+      class="form-control"
+      name="message"
+      placeholder="Leave a comment here"
+      style="height: 100px"
+    >{{message}}</textarea>
   </div>
-  
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
