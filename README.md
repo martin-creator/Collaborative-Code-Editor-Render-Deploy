@@ -1,5 +1,5 @@
 # Collaborative Code Editor(CCE)
-![Imgur](https://i.imgur.com/tcDnavf.jpg)
+![Imgur](https://i.imgur.com/OxrG6hm.jpg)
 
 ## Introduction
 
