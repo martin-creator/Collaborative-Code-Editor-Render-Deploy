@@ -85,7 +85,7 @@ Our tech stack includes the following:
 ## Support
 If you encounter any challenges while installing this application, please don't hesitate to shoot me an email to <martinlubowa@outlook.com>
 
-## Check out these resourses to learn about operation transformational, the technology behind collaborative code/text editors 
+## Check out these resourses to learn about operation transformational, the technology behind collaborative code/text editors. 
 
 * [Operational Transformation, Wikipedia](https://www.google.com/search?q=operation+transformation&oq=operation+trans&aqs=chrome.0.0i355i512j46i512j0i512j69i57j0i512j69i60l3.18079j0j4&sourceid=chrome&ie=UTF-8)
 * [Operational Transformation JS](https://github.com/Operational-Transformation/ot.js/)
