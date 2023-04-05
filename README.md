@@ -1,5 +1,5 @@
 # Collaborative Code Editor(CCE)
-![Imgur](https://i.imgur.com/tcDnavf.jpg)
+![Imgur](https://i.imgur.com/OxrG6hm.jpg)
 
 ## Introduction
 
@@ -14,13 +14,13 @@ This collaborative code editor provides individuals and businesses with the infr
 ## Purpose
 According to the [Stackoverflow developers’ survey of 2022](https://survey.stackoverflow.co/2022/), out of the 70,000 survey participants, only 3.3% are African, and 1.48% are Black. This statistic accurately captures the dire need to increase the developer population in Africa to support the digital transformation of our sectors so that we can provide services to the people most in need. According to the [2020 Google economy report](https://innovationvillage.co.ug/wp-content/uploads/2021/12/Final-DevScape-Report-2021-compressed-1_1.pdf), there are 11,000 developers in Uganda serving a population of 44.7 million people,  which is a low number if our tech ecosystem is to compete in Africa. 
 
-Many companies and organizations like [ALX Africa](https://www.alxafrica.com/), [Andela](https://andela.com/), [Tunga](https://tunga.io/) have come up with programs to train Africans in the latest development technologies to bring this gap. One of the challenges faced during some of these software development programs is the lack of structured mentorship. Ideally, when a student needs help with understanding  a certain alogorithm, the only tool available is zoom or google meet which does not support real time code collaboration thus making the mentor-students session less interactive. 
+Many companies and organizations like [ALX Africa](https://www.alxafrica.com/), [Andela](https://andela.com/), [Tunga](https://tunga.io/) have come up with programs to train Africans in the latest development technologies to bridge this gap. One of the challenges faced during software development programs is the lack of structured mentorship. Ideally, when a student needs help to understand a particular algorithm, the only tools available are zoom or google meet, which do not support real-time code collaboration, thus making the mentor-students session less interactive. 
 
-To address, the problem of less interactive coding session betweenn mentors and students in African bootcamp training programs, I decided to build **CCE** to  enable students and mentors to: 
+To address, the problem of non-interactive coding sessions between mentors and students in African software development training programs, I decided to build **CCE** to  enable students and mentors to: 
 
-- Conduct real-time, remote **pair programming** sessions
-- Conduct real-time, remote **tutoring** sessions
-- Conduct real-time, remote **mock coding interviews**
+* conduct real-time, remote **pair programming** sessions
+* conduct real-time, remote **tutoring** sessions
+* conduct real-time, remote **mock coding interviews**
 
 
 **CCE's** video conferencing and chat features ensure that the coding sessions are interactive as possible.
@@ -85,7 +85,7 @@ Our tech stack includes the following:
 ## Support
 If you encounter any challenges while installing this application, please don't hesitate to shoot me an email to <martinlubowa@outlook.com>
 
-## Check out these resourses to learn about operation transformational, the technology behind collaborative code/text editors 
+## Check out these resourses to learn about operational transformation, the technology behind collaborative code/text editors. 
 
 * [Operational Transformation, Wikipedia](https://www.google.com/search?q=operation+transformation&oq=operation+trans&aqs=chrome.0.0i355i512j46i512j0i512j69i57j0i512j69i60l3.18079j0j4&sourceid=chrome&ie=UTF-8)
 * [Operational Transformation JS](https://github.com/Operational-Transformation/ot.js/)
