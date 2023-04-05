@@ -1,6 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}} - the ultimate task management tool!</p>
 
-{{#if user}}
-    <a href="/createTask" class="btn btn-primary">Create New Task</a>
-{{/if}}
+    {{#if user}}
+        <a href="/createTask" class="btn btn-primary">Create New Task</a>
+    {{/if}}
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Organize Your Tasks</h2>
+      <p>With {{title}}, you can easily create and manage tasks, assign them to team members, and keep track of progress. Stay on top of your to-do list and ensure that nothing falls through the cracks.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Collaborate with Your Team</h2>
+      <p>Efficient task management requires collaboration, and {{title}} makes it easy. Invite team members to your workspace, assign tasks, and keep everyone on the same page. Say goodbye to endless email chains and confusion.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Stay on Track</h2>
+      <p>With {{title}}, you can track progress on each task, set deadlines, and receive notifications when tasks are completed. Stay up to date with your team's progress and ensure that everything is running smoothly.</p>
+    </div>
+  </div>
+</div>

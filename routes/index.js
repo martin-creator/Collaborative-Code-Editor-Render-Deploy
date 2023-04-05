@@ -14,7 +14,7 @@ router.get("/", function (req, res, next) {
   //res.locals.passt = 'Gourav'
  // console.log(res.locals);
   res.render("index", {
-    title: "Collaborative Code Editor - write some come with family!",
+    title: "Collaborative Code Editor",
   });
 });
 
