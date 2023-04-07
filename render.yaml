@@ -1,0 +1,7 @@
+name: collaborartive-code-editor
+env:
+  NODE_ENV: production
+buildCommand: npm install
+startCommand: npm start
+web:
+  - port: 3000

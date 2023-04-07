@@ -3,14 +3,14 @@ var router = express.Router();
 
 /* GET for createTask */
 
-router.get('/createTask', function(req, res){
+router.get('/createTask', function (req, res) {
     var newTask = new Task();
 
-    newTask.save(function(err, data){
-        if(err){
+    newTask.save(function (err, data) {
+        if (err) {
             console.log(err);
             return res.render('error');
-        }else{
+        } else {
             res.redirect('/task/' + data._id);
         }
     })
@@ -19,17 +19,17 @@ router.get('/createTask', function(req, res){
 
 /* GET for task/id */
 
-router.get('/task/:id', function(req, res){
-    if(req.params.id){
-        Task.findOne({_id: req.params.id}, function(err, data){
-            if(err){
+router.get('/task/:id', function (req, res) {
+    if (req.params.id) {
+        Task.findOne({ _id: req.params.id }, function (err, data) {
+            if (err) {
                 console.log(err);
-               return  res.render('error');
+                return res.render('error');
             }
 
-            if(data){
-                return res.render('task', {content: data.content, roomId: data.id});
-            }else {
+            if (data) {
+                return res.render('task', { content: data.content, roomId: data.id });
+            } else {
                 return res.render('error');
             }
             res.render('error');

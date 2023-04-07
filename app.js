@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+const dotenv = require('dotenv');
 const { body, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
 //const user = require("../models/user");
@@ -41,8 +42,35 @@ var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 var taskRouter = require('./routes/task');
 //var usersRouter = require('./routes/users');
+// mongodb+srv://<username>:<password>@cluster0.s6launr.mongodb.net/?retryWrites=true&w=majority
 
-mongoose.connect('mongodb://127.0.0.1:27017/codeshare', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb+srv://martinlubowa:jesus147852@cluster0.s6launr.mongodb.net/codeshare?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log('MongoDB connected');
+//   })
+//   .catch((err) => {
+//     console.error('MongoDB connection error', err);
+//   });
+
+ //mongodb+srv://doadmin:b5pY139Jd84Rc26f@codeshare-0b216bb9.mongo.ondigitalocean.com/admin
+ //mongodb+srv://joseph:masterjesus23@cluster0.s6launr.mongodb.net/codeshare
+
+  mongoose.connect( "mongodb://martinlubowa:jesus147852@ac-g5nl3pm-shard-00-00.s6launr.mongodb.net:27017,ac-g5nl3pm-shard-00-01.s6launr.mongodb.net:27017,ac-g5nl3pm-shard-00-02.s6launr.mongodb.net:27017/codeshare?ssl=true&replicaSet=atlas-uj3q0z-shard-0&authSource=admin&retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  retryWrites: false,
+  connectTimeoutMS: 10000,
+  socketTimeoutMS: 45000
+})
+  .then(() => {
+    console.log('MongoDB connected');
+  })
+  .catch((err) => {
+    console.error('MongoDB connection error', err);
+  });
+
+
 global.User = require('./models/user');
 global.Task = require('./models/task');
 
