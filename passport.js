@@ -43,7 +43,7 @@ function(username, password, done){
 passport.use(new GitHubStrategy({
     clientID: 'Iv1.81531fa3c89e2559',
     clientSecret: '0f5c0bb9a16855ed3de8663f07729abe9b2b8ecc',
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback",
+    callbackURL: "https://collaborartive-code-editor.onrender.com/auth/github/callback",
   },
 
   /*function(accessToken, refreshToken, profile, done) {
