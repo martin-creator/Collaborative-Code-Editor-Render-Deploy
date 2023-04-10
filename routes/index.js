@@ -4,7 +4,18 @@ var router = express.Router();
 const { check, body, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
 var config = require('../config')
-let transporter = nodemailer.createTransport(config.mailer)
+require('dotenv').config();
+// let transporter = nodemailer.createTransport(config.mailer)
+
+const transporter = nodemailer.createTransport({
+  service: process.env.MAIL_SERVICE,
+  auth: {
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASS
+  },
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT
+});
 
 
 
