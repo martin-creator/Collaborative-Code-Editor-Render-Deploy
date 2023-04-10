@@ -2,13 +2,12 @@
 
 module.exports = {
     mailer : {
-        service : 'Gmail',
-        host: "smtp.gmail.com",
+        service : 'mailgun',
+        host: "smtp.mailgun.org",
         port: 587,
-        domains: ["gmail.com", "googlemail.com"],
         auth : {
-            user: 'africaneaglecode@gmail.com',
-            pass : 'africa2022',
+            user: 'postmaster@sandbox973d510af1f04b25b8ee26001600102b.mailgun.org',
+            pass : '4012554c37294c7fb9ae023f718c4afa-2cc48b29-c14f2f6b',
 
         },
 
