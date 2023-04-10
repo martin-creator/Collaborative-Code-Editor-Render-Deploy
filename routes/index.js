@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var router = express.Router();
 const { check, body, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
-var config = require('../config')
+// var config = require('../config')
 require('dotenv').config();
 // let transporter = nodemailer.createTransport(config.mailer)
 

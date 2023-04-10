@@ -33,7 +33,7 @@ var session = require('express-session');
 
 
 require('./passport')
-var config = require('./config');
+// var config = require('./config');
 
 
 
